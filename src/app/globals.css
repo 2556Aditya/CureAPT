@@ -1,0 +1,410 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+/* Scrollbar modifications */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Body styles */
+body {
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+/* Component theming */
+.dark [data-theme="dark"] * {
+  --tw-border-opacity: 1;
+  border-color: rgba(var(--foreground-rgb), var(--tw-border-opacity));
+}
+
+/* Form controls */
+.form-control:focus,
+.form-control:active {
+  background: transparent;
+}
+
+/* Utility classes */
+* {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .pause {
+    animation-play-state: paused;
+  }
+  .line-clamp-6 {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Custom component colors */
+.dark .nextui-slider-thumb {
+  background: rgb(var(--foreground-rgb));
+  border-color: rgb(var(--foreground-rgb));
+}
+
+.dark .nextui-slider-track {
+  background: rgba(var(--foreground-rgb), 0.2);
+}
+
+.dark .nextui-slider-track-active {
+  background: rgb(var(--foreground-rgb));
+}
+/* Text reveal animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.char {
+  display: inline-block;
+  transform-origin: 0% 50%;
+}
+/* In globals.css */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll div {
+  flex-shrink: 0;
+}
+
+.gradient-bg {
+  will-change: transform, opacity;
+}
+/* globals.css */
+.scroll-m-20 {
+  scroll-margin: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+[class*='scroll-m'] {
+  scroll-snap-align: start;
+}
+.opacity-0 {
+  opacity: 0;
+}
+/* Add this to your global.css or equivalent */
+.gradient-glow {
+  background: linear-gradient(
+    to right,
+    #00ff87 0%,
+    #60efff 50%,
+    #00ff87 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(0, 255, 135, 0.5),
+               0 0 40px rgba(96, 239, 255, 0.3);
+}
+
+@keyframes glow {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.5);
+  }
+}
+/* Modern Professional Gradients */
+.gradient-royal {
+  background: linear-gradient(
+    to right,
+    #141E30 0%,
+    #243B55 50%,
+    #141E30 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(20, 30, 48, 0.5),
+               0 0 40px rgba(36, 59, 85, 0.3);
+}
+
+.gradient-sunset {
+  background: linear-gradient(
+    to right,
+    #FF416C 0%,
+    #FF4B2B 50%,
+    #FF416C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(255, 65, 108, 0.5),
+               0 0 40px rgba(255, 75, 43, 0.3);
+}
+
+.gradient-ocean {
+  background: linear-gradient(
+    to right,
+    #2E3192 0%,
+    #1BFFFF 50%,
+    #2E3192 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(46, 49, 146, 0.5),
+               0 0 40px rgba(27, 255, 255, 0.3);
+}
+
+.gradient-luxury {
+  background: linear-gradient(
+    to right,
+    #BD9B4C 0%,
+    #CAB983 50%,
+    #BD9B4C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(189, 155, 76, 0.5),
+               0 0 40px rgba(202, 185, 131, 0.3);
+}
+
+.gradient-aurora {
+  background: linear-gradient(
+    to right,
+    #85FFBD 0%,
+    #FFFB7D 50%,
+    #85FFBD 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(133, 255, 189, 0.5),
+               0 0 40px rgba(255, 251, 125, 0.3);
+}
+
+.gradient-cosmic {
+  background: linear-gradient(
+    to right,
+    #8E2DE2 0%,
+    #4A00E0 50%,
+    #8E2DE2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(142, 45, 226, 0.5),
+               0 0 40px rgba(74, 0, 224, 0.3);
+}
+.gradient-plasma {
+  background: linear-gradient(
+    to right,
+    #1D2671 0%,
+    #C33764 50%,
+    #1D2671 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(29, 38, 113, 0.5),
+               0 0 40px rgba(195, 55, 100, 0.3);
+}
+
+.gradient-northern {
+  background: linear-gradient(
+    to right,
+    #00C9FF 0%,
+    #92FE9D 50%,
+    #00C9FF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(0, 201, 255, 0.5),
+               0 0 40px rgba(146, 254, 157, 0.3);
+}
+
+.gradient-chrome {
+  background: linear-gradient(
+    to right,
+    #1f1f1f 0%,
+    #707070 50%,
+    #1f1f1f 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(31, 31, 31, 0.5),
+               0 0 40px rgba(112, 112, 112, 0.3);
+}
+
+.gradient-ultraviolet {
+  background: linear-gradient(
+    to right,
+    #654ea3 0%,
+    #eaafc8 50%,
+    #654ea3 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(101, 78, 163, 0.5),
+               0 0 40px rgba(234, 175, 200, 0.3);
+}
+/* Professional Elegant Gradients - Updated */
+
+.gradient-emerald {
+  background: linear-gradient(
+    to right,
+    #43cea2 0%,
+    #185a9d 50%,
+    #43cea2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(67, 206, 162, 0.5),
+               0 0 40px rgba(24, 90, 157, 0.3);
+}
+
+.gradient-midnight {
+  background: linear-gradient(
+    to right,
+    #232526 0%,
+    #414345 50%,
+    #232526 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(35, 37, 38, 0.5),
+               0 0 40px rgba(65, 67, 69, 0.3);
+}
+
+.gradient-cyber {
+  background: linear-gradient(
+    to right,
+    #03001e 0%,
+    #7303c0 33%,
+    #ec38bc 66%,
+    #03001e 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(115, 3, 192, 0.5),
+               0 0 40px rgba(236, 56, 188, 0.3);
+}
+
+.gradient-frost {
+  background: linear-gradient(
+    to right,
+    #000428 0%,
+    #004e92 50%,
+    #000428 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(0, 4, 40, 0.5),
+               0 0 40px rgba(0, 78, 146, 0.3);
+}
+
+.gradient-sunrise {
+  background: linear-gradient(
+    to right,
+    #f85032 0%,
+    #e73827 50%,
+    #f85032 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(248, 80, 50, 0.5),
+               0 0 40px rgba(231, 56, 39, 0.3);
+}
+
+.gradient-neo {
+  background: linear-gradient(
+    to right,
+    #16222A 0%,
+    #3A6073 50%,
+    #16222A 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(22, 34, 42, 0.5),
+               0 0 40px rgba(58, 96, 115, 0.3);
+}
+
+.prose {
+  max-width: 100%;
+}
+
+.prose p {
+  margin: 0;
+}
+/* Add to globals.css */
+.chat-window-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.chat-window-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.chat-window-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chat-window-exit-active {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}

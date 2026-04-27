@@ -1,0 +1,49 @@
+{
+  "name": "cureapt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.7.2",
+    "@google/genai": "^1.46.0",
+    "@google/generative-ai": "^0.24.1",
+    "@gsap/react": "^2.1.1",
+    "@heroicons/react": "^2.2.0",
+    "@nextui-org/react": "^2.4.8",
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
+    "cobe": "^0.6.3",
+    "d3": "^7.9.0",
+    "formidable": "^3.5.2",
+    "framer-motion": "^11.12.0",
+    "gsap": "^3.12.5",
+    "inspirational-quotes": "^2.0.1",
+    "lucide-react": "^0.462.0",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.8.0",
+    "next": "^15.0.3",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.3.0",
+    "split-type": "^0.3.4",
+    "tailwind-merge": "^2.5.4",
+    "vaul": "^0.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.5",
+    "@types/react": "18.3.3",
+    "eslint": "^8",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.4"
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
+  }
+}
