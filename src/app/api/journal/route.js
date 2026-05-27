@@ -43,3 +43,36 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  const { userId } = getAuth(request);
+  if (!userId) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  try {
+    const body = await request.json().catch(() => ({}));
+    const url = new URL(request.url);
+    const entryId = body.entryId || url.searchParams.get('entryId');
+
+    if (!entryId) {
+      return NextResponse.json({ error: 'Entry ID is required' }, { status: 400 });
+    }
+
+    await connectToDatabase();
+
+    const deletedEntry = await JournalEntry.findOneAndDelete({ _id: entryId, userId });
+
+    if (!deletedEntry) {
+      return NextResponse.json({ error: 'Entry not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    if (error?.name === 'CastError') {
+      return NextResponse.json({ error: 'Invalid entry ID' }, { status: 400 });
+    }
+
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+}
