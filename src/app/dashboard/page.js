@@ -36,6 +36,7 @@ export default function Home() {
   const router = useRouter();
   const [quote, setQuote] = useState({ text: '', author: '' });
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString());
+  const [journalRefreshKey, setJournalRefreshKey] = useState(0);
 
   const getPhotoUrl = (photoPath) => {
     if (!photoPath) return null;
@@ -152,12 +153,16 @@ useEffect(() => {
   
   
 
+  const handleJournalSaved = () => {
+    setJournalRefreshKey(prev => prev + 1);
+  };
+
   return (
     <main className="bg-gradient-to-t from-blue-600 to-black">
             <ShootingStars />
             <StarsBackground />
       <div className="max-h-[400px]">
-        <Navbars />
+        <Navbars onJournalSaved={handleJournalSaved} />
         <div className="grid justify-items-center justify-self-center grid-cols-2 mt-2 gap-4 p-4">
 
           <Circularpro streakCount={user ? user.streakCount : 0} />
@@ -262,7 +267,7 @@ useEffect(() => {
         <h3 className="flex justify-center text-center text-md font-light drop-shadow-lg">Start writing, no matter what. The water does not flow until the faucet is turned on.</h3>
       </>
       <div className="flex justify-center p-10">
-        <Modal1entries />
+        <Modal1entries refreshKey={journalRefreshKey} />
       </div>
     </main>
   );

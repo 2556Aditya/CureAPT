@@ -7,7 +7,7 @@ import { WobbleCard } from "./WobbleCard";
 import { Button } from "@nextui-org/react";
 import { DeleteDocumentIcon } from "./DeleteDocumentIcon";
 
-export default function Modal1entries() {
+export default function Modal1entries({ refreshKey }) {
   const [entries, setEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,7 +58,7 @@ export default function Modal1entries() {
   // Only fetch on mount and retry count change
   useEffect(() => {
     fetchEntries();
-  }, [retryCount, fetchEntries]);
+  }, [retryCount, fetchEntries, refreshKey]);
 
   const handleRetry = () => {
     setRetryCount(0);

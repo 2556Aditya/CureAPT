@@ -7,7 +7,7 @@ import Modal1 from "./Modal1";
 import Modal3 from "./Modal3";
 import Logout from "./Logout";
 
-export default function Navbarss() {
+export default function Navbarss({ onJournalSaved }) {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -61,6 +61,7 @@ export default function Navbarss() {
         <Modal1
           user={user}
           onProfileUpdate={handleProfileUpdate}
+          onSave={onJournalSaved}
           onClick={() => setIsModalOpen(true)}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
